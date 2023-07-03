@@ -1,17 +1,15 @@
 import { Box, HStack, VStack } from "@chakra-ui/react"
 import React from "react"
-import { Weapon, elements, showElement, showStatus, statuses } from "../types"
+import { Weapon, calcOffense, elements, showElement, showStatus, statuses } from "../types"
 
 type Props = {
   weapon: Weapon
 }
 export const WeaponStatus: React.FC<Props> = ({ weapon }) => {
-  const offense = 0
-
   return (
     <Box>
       <Box mb={3}>
-        {weapon.material.name}の{weapon.type.name} {offense}
+        {weapon.material.name}の{weapon.type.name} {calcOffense(weapon)}
       </Box>
       <HStack wrap={"wrap"}>
         <Box>
