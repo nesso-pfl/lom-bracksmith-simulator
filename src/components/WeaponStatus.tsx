@@ -1,26 +1,6 @@
 import { Box, HStack, VStack } from "@chakra-ui/react"
 import React from "react"
-import {
-  BigTrick,
-  Element,
-  Material,
-  SecretPower,
-  Status,
-  WeaponType,
-  elements,
-  showElement,
-  showStatus,
-  statuses,
-} from "../types"
-
-export type Weapon = {
-  material: Material
-  type: WeaponType
-  bigTricks: BigTrick[]
-  status: Record<Status, number>
-  element: Record<Element, number>
-  secretPowers: SecretPower[]
-}
+import { Weapon, elements, showElement, showStatus, statuses } from "../types"
 
 type Props = {
   weapon: Weapon
