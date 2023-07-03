@@ -21,7 +21,7 @@ export type Material = {
     weight: number
     strength: number
     technique: number
-    suppression: number
-    resistance: Record<Element, number>
   }
+  suppression: number
+  resistance: Record<Element, number>
 }
