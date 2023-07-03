@@ -1,6 +1,6 @@
 import { Box, ChakraProvider } from "@chakra-ui/react"
 import { WeaponStatus } from "./components/WeaponStatus"
-import { materialData } from "./data"
+import { materialData, weaponData } from "./data"
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <WeaponStatus
           weapon={{
             material: materialData[0],
-            type: "sword",
+            type: weaponData[0],
             bigTricks: [],
             status: {
               power: 2,

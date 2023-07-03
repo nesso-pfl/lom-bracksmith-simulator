@@ -1,7 +1,18 @@
-export const weaponTypes = ["sword"] as const
-export type WeaponType = (typeof weaponTypes)[number]
-
-export const showWeaponType = (weaponType: WeaponType) =>
-  ({
-    sword: "片手剣",
-  }[weaponType])
+export const weaponTypes = [
+  "dagger",
+  "sword",
+  "hatchet",
+  "blade",
+  "axe",
+  "hammer",
+  "lance",
+  "stick",
+  "knuckle",
+  "nunchaku",
+  "bow",
+] as const
+export type WeaponType = {
+  id: (typeof weaponTypes)[number]
+  name: string
+  spec: Record<"sharpness" | "weight" | "strength" | "technique", number>
+}

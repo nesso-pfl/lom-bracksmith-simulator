@@ -10,7 +10,6 @@ import {
   elements,
   showElement,
   showStatus,
-  showWeaponType,
   statuses,
 } from "../types"
 
@@ -32,7 +31,7 @@ export const WeaponStatus: React.FC<Props> = ({ weapon }) => {
   return (
     <Box>
       <Box mb={3}>
-        {weapon.material.name}の{showWeaponType(weapon.type)} {offense}
+        {weapon.material.name}の{weapon.type.name} {offense}
       </Box>
       <HStack wrap={"wrap"}>
         <Box>
