@@ -9,7 +9,7 @@ function App() {
           weapon={{
             material: { type: "metal", name: "ロリマー聖鉄" },
             type: "sword",
-            bigTrick: [],
+            bigTricks: [],
             status: {
               power: 2,
               technique: 2,
@@ -30,7 +30,7 @@ function App() {
               wind: 2,
               water: 2,
             },
-            secretPower: [],
+            secretPowers: [],
           }}
         />
       </Box>
