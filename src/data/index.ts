@@ -1,2 +1,2 @@
-export * from "./material"
+export * from "./baseMaterial"
 export * from "./weapon"

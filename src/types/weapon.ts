@@ -1,4 +1,4 @@
-import { BigTrick, Material, SecretPower, Status, Element } from "."
+import { BigTrick, BaseMaterial, SecretPower, Status, Element } from "."
 
 export const weaponTypes = [
   "dagger",
@@ -20,7 +20,7 @@ export type WeaponType = {
 }
 
 export type Weapon = {
-  material: Material
+  material: BaseMaterial
   type: WeaponType
   bigTricks: BigTrick[]
   status: Record<Status, number>

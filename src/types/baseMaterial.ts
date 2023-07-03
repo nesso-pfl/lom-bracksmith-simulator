@@ -1,6 +1,6 @@
 import { Element } from "."
 
-export const materialTypes = [
+export const baseMaterialTypes = [
   "metal",
   "wood",
   "stone",
@@ -11,10 +11,10 @@ export const materialTypes = [
   "meteorite",
   "etc",
 ] as const
-export type MaterialType = (typeof materialTypes)[number]
+export type BaseMaterialType = (typeof baseMaterialTypes)[number]
 
-export type Material = {
-  type: MaterialType
+export type BaseMaterial = {
+  type: BaseMaterialType
   name: string
   spec: {
     sharpness: number

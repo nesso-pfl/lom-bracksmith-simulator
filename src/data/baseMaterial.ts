@@ -1,6 +1,6 @@
-import { Material } from "../types"
+import { BaseMaterial } from "../types"
 
-export const materialData: Material[] = [
+export const materialData: BaseMaterial[] = [
   {
     type: "metal",
     name: "メノス銅",
