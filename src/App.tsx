@@ -1,5 +1,5 @@
 import { Box, ChakraProvider } from "@chakra-ui/react"
-import { WeaponStatus } from "./components/WeaponStatus"
+import { SideMaterialButtons, WeaponStatus } from "./components"
 import { materialData, weaponData } from "./data"
 
 function App() {
@@ -34,6 +34,7 @@ function App() {
             secretPowers: [],
           }}
         />
+        <SideMaterialButtons onClick={(material) => console.log(material)} />
       </Box>
     </ChakraProvider>
   )
