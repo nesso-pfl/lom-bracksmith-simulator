@@ -344,14 +344,6 @@ export const sideMaterialData: SideMaterial[] = [
     status: { physical: 10 },
   },
   {
-    name: "クジラトマト",
-    category: "fruit",
-    energy: 32,
-    outingEnergy: 32,
-    secretPower: "narwhal",
-    status: { physical: 10 },
-  },
-  {
     name: "時計パイン",
     category: "fruit",
     energy: 24,
