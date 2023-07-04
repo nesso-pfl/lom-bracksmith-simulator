@@ -1,4 +1,4 @@
-import { SideMaterial } from "../types"
+import { SideMaterial } from "../logic"
 
 export const sideMaterialData: SideMaterial[] = [
   {

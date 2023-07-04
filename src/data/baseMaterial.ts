@@ -1,4 +1,4 @@
-import { BaseMaterial } from "../types"
+import { BaseMaterial } from "../logic"
 
 export const materialData: BaseMaterial[] = [
   {

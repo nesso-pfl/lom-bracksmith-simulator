@@ -1,4 +1,4 @@
-import { WeaponType } from "../types"
+import { WeaponType } from "../logic"
 
 export const weaponData: WeaponType[] = [
   {

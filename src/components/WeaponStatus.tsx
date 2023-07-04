@@ -1,6 +1,6 @@
 import { Box, HStack, VStack } from "@chakra-ui/react"
 import React from "react"
-import { Weapon, calcOffense, elements, showElement, showStatus, statuses } from "../types"
+import { Weapon, calcOffense, elements, showElement, showStatus, statuses } from "../logic"
 
 type Props = {
   weapon: Weapon
