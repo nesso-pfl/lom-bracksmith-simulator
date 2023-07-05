@@ -1,8 +1,17 @@
 import { Box, ChakraProvider } from "@chakra-ui/react"
-import { BaseMaterialAndWeaponTypeForm, SideMaterialButtons, WeaponStatus } from "./components"
+import {
+  BaseMaterialAndWeaponTypeForm,
+  SelectedSideMaterialHistory,
+  SideMaterialButtons,
+  WeaponStatus,
+} from "./components"
 import { baseMaterialData, weaponData } from "./data"
+import { useState } from "react"
+import { SideMaterial } from "./logic"
 
 function App() {
+  const [selectedSideMaterials, setSelectedSideMaterials] = useState<SideMaterial[]>([])
+
   return (
     <ChakraProvider>
       <Box>
@@ -38,7 +47,8 @@ function App() {
             secretPowers: [],
           }}
         />
-        <SideMaterialButtons onClick={(material) => console.log(material)} />
+        <SideMaterialButtons onClick={(material) => setSelectedSideMaterials((current) => [...current, material])} />
+        <SelectedSideMaterialHistory sideMaterials={selectedSideMaterials} />
       </Box>
     </ChakraProvider>
   )
