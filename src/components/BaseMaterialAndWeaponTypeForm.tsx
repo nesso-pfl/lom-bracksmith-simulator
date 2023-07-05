@@ -1,4 +1,4 @@
-import { Box, Select } from "@chakra-ui/react"
+import { Box, FormControl, FormLabel, Select } from "@chakra-ui/react"
 import { baseMaterialData, weaponData } from "../data"
 import React from "react"
 import { BaseMaterial, WeaponType } from "../logic"
@@ -22,16 +22,22 @@ export const BaseMaterialAndWeaponTypeForm: React.FC<Props> = ({ onChangeWeaponT
 
   return (
     <Box>
-      <Select defaultValue={weaponData[0].name} onChange={onChangeWeaponType_}>
-        {weaponData.map((weapon) => (
-          <option key={weapon.name}>{weapon.name}</option>
-        ))}
-      </Select>
-      <Select defaultValue={baseMaterialData[0].name} onChange={onChangeBaseMaterial_}>
-        {baseMaterialData.map((material) => (
-          <option key={material.name}>{material.name}</option>
-        ))}
-      </Select>
+      <FormControl mb={2}>
+        <FormLabel fontSize="sm">武器種</FormLabel>
+        <Select h={8} defaultValue={weaponData[0].name} onChange={onChangeWeaponType_} borderColor="gray.800">
+          {weaponData.map((weapon) => (
+            <option key={weapon.name}>{weapon.name}</option>
+          ))}
+        </Select>
+      </FormControl>
+      <FormControl>
+        <FormLabel fontSize="sm">主原料</FormLabel>
+        <Select h={8} defaultValue={baseMaterialData[0].name} onChange={onChangeBaseMaterial_} borderColor="gray.800">
+          {baseMaterialData.map((material) => (
+            <option key={material.name}>{material.name}</option>
+          ))}
+        </Select>
+      </FormControl>
     </Box>
   )
 }
