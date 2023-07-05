@@ -1,14 +1,18 @@
 import { Box, ChakraProvider } from "@chakra-ui/react"
-import { SideMaterialButtons, WeaponStatus } from "./components"
-import { materialData, weaponData } from "./data"
+import { BaseMaterialAndWeaponTypeForm, SideMaterialButtons, WeaponStatus } from "./components"
+import { baseMaterialData, weaponData } from "./data"
 
 function App() {
   return (
     <ChakraProvider>
       <Box>
+        <BaseMaterialAndWeaponTypeForm
+          onChangeBaseMaterial={(e) => console.log(e)}
+          onChangeWeaponType={(e) => console.log(e)}
+        />
         <WeaponStatus
           weapon={{
-            material: materialData[0],
+            material: baseMaterialData[0],
             type: weaponData[0],
             bigTricks: [],
             status: {

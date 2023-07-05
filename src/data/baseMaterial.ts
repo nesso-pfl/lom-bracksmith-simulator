@@ -1,6 +1,6 @@
 import { BaseMaterial } from "../logic"
 
-export const materialData: BaseMaterial[] = [
+export const baseMaterialData: BaseMaterial[] = [
   {
     type: "metal",
     name: "メノス銅",
