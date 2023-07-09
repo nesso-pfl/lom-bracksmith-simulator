@@ -7,7 +7,7 @@ import {
 } from "./components"
 import { baseMaterialData, weaponData } from "./data"
 import { useState } from "react"
-import { SideMaterial, Weapon } from "./logic"
+import { SideMaterial, Weapon, blackSmith } from "./logic"
 
 function App() {
   const [weapon, setWeapon] = useState<Weapon>({
@@ -59,7 +59,10 @@ function App() {
         <Flex>
           <Box>
             <SideMaterialButtons
-              onClick={(material) => setSelectedSideMaterials((current) => [...current, material])}
+              onClick={(material) => {
+                setSelectedSideMaterials((current) => [...current, material])
+                setWeapon(blackSmith(weapon, material))
+              }}
             />
           </Box>
           <Box minW="150px" minH={0}>
