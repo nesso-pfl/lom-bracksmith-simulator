@@ -37,8 +37,8 @@ export const WeaponStatus: React.FC<Props> = ({ weapon }) => {
             ))}
           </VStack>
           <VStack>
-            {weapon.secretPowers.map((secretPower) => (
-              <Box key={secretPower}>{secretPower}</Box>
+            {weapon.secretPowers.map((secretPower, index) => (
+              <Box key={index}>{secretPower}</Box>
             ))}
           </VStack>
         </Box>
