@@ -9,7 +9,7 @@ export type SecretPower =
   | "undine"
   | "sunGod"
   | "moonGoddess"
-  | "dawnDaughter"
+  | "dawnGirl"
   | "ancientMoon"
   | "worldTree"
   | "windGod"

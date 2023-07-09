@@ -182,7 +182,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "manaCristal",
     energy: 96,
     outingEnergy: 96,
-    secretPower: "dawnDaughter",
+    secretPower: "dawnGirl",
   },
   {
     name: "カオスのクリスタル",

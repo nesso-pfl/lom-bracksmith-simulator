@@ -35,6 +35,7 @@ function App() {
       water: 0,
     },
     secretPowers: [],
+    reservedSecretPower: undefined,
   })
   const [selectedSideMaterials, setSelectedSideMaterials] = useState<SideMaterial[]>([])
 

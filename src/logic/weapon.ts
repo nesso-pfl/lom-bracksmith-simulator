@@ -26,10 +26,11 @@ export type Weapon = {
   status: Record<Status, number>
   element: Record<Element, number>
   secretPowers: SecretPower[]
+  reservedSecretPower: SecretPower | undefined
 }
 
 export const calcOffense = (weapon: Weapon) => {
-  return Math.ceil(
+  return Math.floor(
     (((weapon.type.spec.sharpness * weapon.material.spec.sharpness +
       weapon.type.spec.weight * weapon.material.spec.weight +
       weapon.type.spec.strength * weapon.material.spec.strength +
