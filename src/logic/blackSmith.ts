@@ -30,7 +30,10 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
   const state2 = [2, 1, 0].reduce((cur, acc) => applySP(cur, acc), state1)
   // 光闇以外判定
   const state3 = [...state2.weapon.secretPowers.map(spToElement), state2.sideMaterial.element]
-    .filter((maybeElement): maybeElement is Element => maybeElement !== undefined)
+    .filter(
+      (maybeElement): maybeElement is Element =>
+        maybeElement !== undefined && maybeElement !== "dark" && maybeElement !== "light",
+    )
     .sort((a, b) => -elementOrder.indexOf(a) + elementOrder.indexOf(b))
     .reduce((cur, acc) => forge(cur, acc), state2)
 
