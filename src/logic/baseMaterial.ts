@@ -1,16 +1,6 @@
 import { Element } from "."
 
-export const baseMaterialTypes = [
-  "metal",
-  "wood",
-  "stone",
-  "leather",
-  "scale",
-  "bone",
-  "cloth",
-  "meteorite",
-  "etc",
-] as const
+export const baseMaterialTypes = ["金属", "木材", "石", "革", "鱗", "骨", "布", "隕石", "他"] as const
 export type BaseMaterialType = (typeof baseMaterialTypes)[number]
 
 export type BaseMaterial = {
