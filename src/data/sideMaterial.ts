@@ -7,7 +7,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 0,
     element: "light",
-    secretPower: "wisp",
+    secretPower: "ウィスプ",
   },
   {
     name: "ジェイドの金貨",
@@ -15,7 +15,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 128,
     element: "dark",
-    secretPower: "jade",
+    secretPower: "ジェイド",
   },
   {
     name: "ドリアードの金貨",
@@ -23,7 +23,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 64,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "アウラの金貨",
@@ -31,7 +31,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 64,
     element: "metal",
-    secretPower: "aura",
+    secretPower: "アウラ",
   },
   {
     name: "サラマンダーの金貨",
@@ -39,7 +39,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 64,
     element: "fire",
-    secretPower: "salamander",
+    secretPower: "サラマンダー",
   },
   {
     name: "ノームの金貨",
@@ -47,7 +47,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 0,
     element: "earth",
-    secretPower: "norm",
+    secretPower: "ノーム",
   },
   {
     name: "ジンの金貨",
@@ -55,7 +55,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 128,
     element: "wind",
-    secretPower: "jinn",
+    secretPower: "ジン",
   },
   {
     name: "ウンディーネの金貨",
@@ -63,7 +63,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 64,
     outingEnergy: 64,
     element: "water",
-    secretPower: "undine",
+    secretPower: "ウンディーネ",
   },
   {
     name: "ウィスプの銀貨",
@@ -71,7 +71,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 48,
     element: "light",
-    secretPower: "wisp",
+    secretPower: "ウィスプ",
   },
   {
     name: "ジェイドの銀貨",
@@ -79,7 +79,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 128,
     element: "dark",
-    secretPower: "jade",
+    secretPower: "ジェイド",
   },
   {
     name: "ドリアードの銀貨",
@@ -87,7 +87,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 128,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "アウラの銀貨",
@@ -95,7 +95,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 128,
     element: "metal",
-    secretPower: "aura",
+    secretPower: "アウラ",
   },
   {
     name: "サラマンダーの銀貨",
@@ -103,7 +103,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 48,
     element: "fire",
-    secretPower: "salamander",
+    secretPower: "サラマンダー",
   },
   {
     name: "ノームの銀貨",
@@ -111,7 +111,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 128,
     element: "earth",
-    secretPower: "norm",
+    secretPower: "ノーム",
   },
   {
     name: "ジンの銀貨",
@@ -119,7 +119,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 128,
     element: "wind",
-    secretPower: "jinn",
+    secretPower: "ジン",
   },
   {
     name: "ウンディーネの銀貨",
@@ -127,7 +127,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 48,
     element: "water",
-    secretPower: "undine",
+    secretPower: "ウンディーネ",
   },
   {
     name: "火のマナストーン",
@@ -135,7 +135,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 128,
     element: "fire",
-    secretPower: "salamander",
+    secretPower: "サラマンダー",
   },
   {
     name: "土のマナストーン",
@@ -143,7 +143,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 24,
     element: "earth",
-    secretPower: "norm",
+    secretPower: "ノーム",
   },
   {
     name: "風のマナストーン",
@@ -151,7 +151,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 24,
     element: "wind",
-    secretPower: "jinn",
+    secretPower: "ジン",
   },
   {
     name: "水のマナストーン",
@@ -159,7 +159,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 128,
     element: "water",
-    secretPower: "undine",
+    secretPower: "ウンディーネ",
   },
   {
     name: "陽光のクリスタル",
@@ -167,7 +167,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 48,
     element: "light",
-    secretPower: "sunGod",
+    secretPower: "太陽神",
   },
   {
     name: "月光のクリスタル",
@@ -175,21 +175,21 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 200,
     element: "dark",
-    secretPower: "moonGoddess",
+    secretPower: "月の女神",
   },
   {
     name: "輝きのクリスタル",
     category: "マナクリスタル",
     energy: 96,
     outingEnergy: 96,
-    secretPower: "dawnGirl",
+    secretPower: "暁の娘",
   },
   {
     name: "カオスのクリスタル",
     category: "マナクリスタル",
     energy: 24,
     outingEnergy: 112,
-    secretPower: "ancientMoon",
+    secretPower: "太古の月",
   },
   {
     name: "まるい種",
@@ -197,7 +197,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 16,
     outingEnergy: 16,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "だえんの種",
@@ -205,7 +205,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 16,
     outingEnergy: 16,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "ひしゃげた種",
@@ -213,7 +213,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 16,
     outingEnergy: 16,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "おおきな種",
@@ -221,7 +221,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 24,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "ちいさな種",
@@ -229,7 +229,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 24,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "ほそながい種",
@@ -237,7 +237,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 24,
     outingEnergy: 24,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "ひらたい種",
@@ -245,7 +245,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 48,
     element: "wood",
-    secretPower: "dryad",
+    secretPower: "ドリアード",
   },
   {
     name: "とげとげの種",
@@ -253,7 +253,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 48,
     outingEnergy: 0,
     element: "wood",
-    secretPower: "worldTree",
+    secretPower: "世界樹",
   },
   {
     name: "すずぶどう",
@@ -267,7 +267,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "windGod",
+    secretPower: "風神",
     status: { luck: "1up" },
   },
   {
@@ -282,14 +282,14 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "shoeFairy",
+    secretPower: "妖精（靴）",
   },
   {
     name: "ハイヒールペア",
     category: "果実",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "shoeFairy",
+    secretPower: "妖精（靴）",
   },
   {
     name: "イルカキューリ",
@@ -297,7 +297,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 16,
     outingEnergy: 0,
     element: "water",
-    secretPower: "seaGod",
+    secretPower: "海神",
   },
   {
     name: "イカレモン",
@@ -310,14 +310,14 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 16,
     outingEnergy: 0,
-    secretPower: "balance",
+    secretPower: "天秤",
   },
   {
     name: "ドッグピーチ",
     category: "果実",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "wolf",
+    secretPower: "狼",
     specRate: { sharpness: 1.25, weight: 0.75 },
   },
   {
@@ -332,7 +332,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 64,
     outingEnergy: 64,
-    secretPower: "appleOrchardGirl",
+    secretPower: "リンゴ園の娘",
     status: { technique: "1up" },
   },
   {
@@ -340,7 +340,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "narwhal",
+    secretPower: "一角",
     status: { physical: 10 },
   },
   {
@@ -348,7 +348,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 24,
     outingEnergy: 0,
-    secretPower: "godsTwilight",
+    secretPower: "神々の黄昏",
   },
   {
     name: "フィッシュフルーツ",
@@ -356,7 +356,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 32,
     outingEnergy: 0,
     element: "water",
-    secretPower: "fountain",
+    secretPower: "泉",
     status: { magic: "1up" },
   },
   {
@@ -378,7 +378,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "seaGod",
+    secretPower: "海神",
   },
   {
     name: "クラウンガーリック",
@@ -386,7 +386,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 8,
     outingEnergy: 8,
     element: "metal",
-    secretPower: "king",
+    secretPower: "王様",
   },
   {
     name: "ハニーオニオン",
@@ -394,7 +394,7 @@ export const sideMaterialData: SideMaterial[] = [
     energy: 32,
     outingEnergy: 32,
     element: "wood",
-    secretPower: "princess",
+    secretPower: "王女様",
   },
   {
     name: "スイートモアイ",
@@ -415,7 +415,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "seaFairy",
+    secretPower: "妖精（海）",
     status: { defence: "1up" },
   },
   {
@@ -436,7 +436,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 24,
     outingEnergy: 0,
-    secretPower: "thornsBush",
+    secretPower: "いばらのしげみ",
     specRate: { sharpness: 1.25, weight: 0.75 },
   },
   {
@@ -457,7 +457,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "abductedGirl",
+    secretPower: "かどわかされし娘",
     status: { spirit: "1up" },
   },
   {
@@ -465,7 +465,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 64,
     outingEnergy: 64,
-    secretPower: "tower",
+    secretPower: "塔",
     status: { charm: "1up" },
   },
   {
@@ -473,7 +473,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 64,
     outingEnergy: 64,
-    secretPower: "hugeBeast",
+    secretPower: "巨獣",
     status: { defence: "1up" },
   },
   {
@@ -481,7 +481,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "clown",
+    secretPower: "道化師",
     status: { luck: 3 },
   },
   {
@@ -489,7 +489,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "godMother",
+    secretPower: "神々の母",
     status: { charm: "1up" },
   },
   {
@@ -497,7 +497,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "heavenRuler",
+    secretPower: "天上の支配者",
     specRate: { sharpness: 1.25 },
   },
   {
@@ -505,7 +505,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "果実",
     energy: 64,
     outingEnergy: 64,
-    secretPower: "city",
+    secretPower: "都市",
   },
   {
     name: "ゴールドクローバー",
@@ -609,7 +609,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "爪牙",
     energy: 24,
     outingEnergy: 0,
-    secretPower: "destructionGod",
+    secretPower: "破壊神",
     specRate: { sharpness: 1.25, weight: 0.75 },
   },
   {
@@ -617,7 +617,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "爪牙",
     energy: 8,
     outingEnergy: 0,
-    secretPower: "beastHeadGod",
+    secretPower: "獣頭神",
     specRate: { technique: 1.25, strength: 0.75 },
   },
   {
@@ -625,7 +625,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "爪牙",
     energy: 32,
     outingEnergy: 0,
-    secretPower: "hugeBeast",
+    secretPower: "巨獣",
     specRate: { weight: 1.25, sharpness: 0.75 },
   },
   {
@@ -640,7 +640,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "爪牙",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "tower",
+    secretPower: "塔",
   },
   {
     name: "死者の爪",
@@ -653,7 +653,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "爪牙",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "moonWitch",
+    secretPower: "月の魔女",
     status: { spirit: "1up", charm: "1up" },
   },
   {
@@ -661,21 +661,21 @@ export const sideMaterialData: SideMaterial[] = [
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "prideImp",
+    secretPower: "子悪魔(傲慢)",
   },
   {
     name: "ねむたい瞳",
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "slothImp",
+    secretPower: "子悪魔(怠惰)",
   },
   {
     name: "とぼけた瞳",
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "gluttonyImp",
+    secretPower: "子悪魔(大食)",
     specRate: { weight: 1.25 },
   },
   {
@@ -683,14 +683,14 @@ export const sideMaterialData: SideMaterial[] = [
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "greedImp",
+    secretPower: "子悪魔(強欲)",
   },
   {
     name: "けわしい瞳",
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "wrathImp",
+    secretPower: "子悪魔(憤怒)",
     specRate: { strength: 1.25 },
   },
   {
@@ -698,7 +698,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "envyImp",
+    secretPower: "子悪魔(嫉妬)",
     specRate: { technique: 1.25 },
   },
   {
@@ -706,7 +706,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "瞳",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "lustImp",
+    secretPower: "子悪魔(好色)",
   },
   {
     name: "よこしまな瞳",
@@ -720,7 +720,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "羽根",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "fallenAngel",
+    secretPower: "堕天使",
     status: { charm: "1up" },
   },
   {
@@ -728,7 +728,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "羽根",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "crow",
+    secretPower: "カラス",
     status: { spirit: "1up" },
   },
   {
@@ -736,7 +736,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "羽根",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "flyKing",
+    secretPower: "蠅の王",
     specRate: { technique: 1.25, weight: 0.75 },
   },
   {
@@ -744,14 +744,14 @@ export const sideMaterialData: SideMaterial[] = [
     category: "羽根",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "forestFairy",
+    secretPower: "妖精（森）",
   },
   {
     name: "燃えさかるはね",
     category: "羽根",
     energy: 64,
     outingEnergy: 64,
-    secretPower: "phoenix",
+    secretPower: "不死鳥",
     status: { power: 5 },
   },
   {
@@ -759,7 +759,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "羽根",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "flyingGirl",
+    secretPower: "天かける娘",
     status: { technique: 5 },
   },
   {
@@ -811,28 +811,28 @@ export const sideMaterialData: SideMaterial[] = [
     category: "小瓶",
     energy: 24,
     outingEnergy: 224,
-    secretPower: "witch",
+    secretPower: "魔女",
   },
   {
     name: "臭い息",
     category: "小瓶",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "lustImp",
+    secretPower: "子悪魔(好色)",
   },
   {
     name: "絶望のさけび",
     category: "小瓶",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "sacrificedGirl",
+    secretPower: "ささげられし娘",
   },
   {
     name: "竜の息",
     category: "小瓶",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "hero",
+    secretPower: "勇者",
     specRate: { strength: 1.25, technique: 1.25 },
   },
   {
@@ -840,14 +840,14 @@ export const sideMaterialData: SideMaterial[] = [
     category: "小瓶",
     energy: 16,
     outingEnergy: 128,
-    secretPower: "loveGod",
+    secretPower: "愛の女神",
   },
   {
     name: "電気の素",
     category: "壺",
     energy: 32,
     outingEnergy: 32,
-    secretPower: "lightningGod",
+    secretPower: "雷神",
   },
   {
     name: "こけ",
@@ -860,7 +860,7 @@ export const sideMaterialData: SideMaterial[] = [
     category: "壺",
     energy: 24,
     outingEnergy: 192,
-    secretPower: "harvestGoddess",
+    secretPower: "豊饒の女神",
   },
   {
     name: "ケムシの黒焼き",
@@ -873,91 +873,91 @@ export const sideMaterialData: SideMaterial[] = [
     category: "丸薬",
     energy: 48,
     outingEnergy: 48,
-    secretPower: "darkWing",
+    secretPower: "闇の翼",
   },
   {
     name: "イオウ",
     category: "粉末",
     energy: 24,
     outingEnergy: 24,
-    secretPower: "wizard",
+    secretPower: "魔法使い",
   },
   {
     name: "毒の粉",
     category: "粉末",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "wrathImp",
+    secretPower: "子悪魔(憤怒)",
   },
   {
     name: "ねむりのこな",
     category: "粉末",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "envyImp",
+    secretPower: "子悪魔(嫉妬)",
   },
   {
     name: "まひのこな",
     category: "粉末",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "gluttonyImp",
+    secretPower: "子悪魔(大食)",
   },
   {
     name: "さびのこな",
     category: "粉末",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "slothImp",
+    secretPower: "子悪魔(怠惰)",
   },
   {
     name: "墓場の土",
     category: "粉末",
     energy: 32,
     outingEnergy: 0,
-    secretPower: "deadGround",
+    secretPower: "死せる大地",
   },
   {
     name: "灰",
     category: "粉末",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "volcano",
+    secretPower: "火山",
   },
   {
     name: "ふさふさのけだま",
     category: "袋",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "houseworkFairy",
+    secretPower: "妖精（家事）",
   },
   {
     name: "針",
     category: "袋",
     energy: 8,
     outingEnergy: 8,
-    secretPower: "thornsBush",
+    secretPower: "いばらのしげみ",
   },
   {
     name: "鏡の破片",
     category: "袋",
     energy: 24,
     outingEnergy: 0,
-    secretPower: "mirrorWorld",
+    secretPower: "鏡面世界",
   },
   {
     name: "ひとふさのウール",
     category: "袋",
     energy: 16,
     outingEnergy: 248,
-    secretPower: "searcher",
+    secretPower: "探索者",
   },
   {
     name: "読めない巻物",
     category: "袋",
     energy: 16,
     outingEnergy: 16,
-    secretPower: "sage",
+    secretPower: "智者",
   },
   {
     name: "草ムシまんじゅう",
