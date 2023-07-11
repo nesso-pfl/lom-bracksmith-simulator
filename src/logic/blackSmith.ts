@@ -62,7 +62,7 @@ const injectSP = (weapon: Weapon, sideMaterial: SideMaterial): BlackSmith => {
         reservedSecretPower: sideMaterial.secretPower,
       },
       sideMaterial,
-      currentEnergy: extractedSecretPower === "dawnGirl" ? sideMaterial.energy + 192 : sideMaterial.energy,
+      currentEnergy: extractedSecretPower === "暁の娘" ? sideMaterial.energy + 192 : sideMaterial.energy,
       extractedSecretPower,
       witch: 0,
       wizard: 0,
@@ -128,15 +128,15 @@ const forge = (blackSmith: BlackSmith, element: Element) => {
 const applySP = (blackSmith: BlackSmith, index: number) => {
   const secretPower = blackSmith.weapon.secretPowers[index]
   switch (secretPower) {
-    case "wisp":
+    case "ウィスプ":
       return forge(blackSmith, "light")
-    case "jade":
+    case "ジェイド":
       return forge(blackSmith, "dark")
-    case "wizard":
+    case "魔法使い":
       return { ...blackSmith, wizard: blackSmith.wizard + 1 }
-    case "witch":
+    case "魔女":
       return { ...blackSmith, witch: blackSmith.witch + 1 }
-    case "dawnGirl":
+    case "暁の娘":
       return blackSmith.currentEnergy <= 24
         ? {
             ...blackSmith,
@@ -154,21 +154,21 @@ const applySP = (blackSmith: BlackSmith, index: number) => {
 
 const spToElement = (secretPower: SecretPower): Element | undefined => {
   switch (secretPower) {
-    case "wisp":
+    case "ウィスプ":
       return "light"
-    case "jade":
+    case "ジェイド":
       return "dark"
-    case "dryad":
+    case "ドリアード":
       return "wood"
-    case "aura":
+    case "アウラ":
       return "metal"
-    case "salamander":
+    case "サラマンダー":
       return "fire"
-    case "norm":
+    case "ノーム":
       return "earth"
-    case "jinn":
+    case "ジン":
       return "wind"
-    case "undine":
+    case "ウンディーネ":
       return "water"
     default:
       return undefined
