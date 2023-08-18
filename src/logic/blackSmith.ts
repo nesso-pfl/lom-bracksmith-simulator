@@ -1,6 +1,6 @@
 import { Element, SecretPower, SideMaterial, Weapon, getElementRelation, spToElement } from '.'
 
-type BlackSmith = {
+export type BlackSmith = {
   weapon: Weapon
   sideMaterial: SideMaterial
   currentEnergy: number
@@ -73,7 +73,7 @@ const reserveSP = (blackSmith: BlackSmith): BlackSmith => {
 
 const applyCommet = (blackSmith: BlackSmith): BlackSmith => {
   const { weapon } = blackSmith
-  if (weapon.material.name !== '隕石' || weapon.element.fire === 0) return blackSmith
+  if (weapon.material.type !== '隕石' || weapon.element.fire === 0) return blackSmith
   return {
     ...blackSmith,
     weapon: {
@@ -130,6 +130,7 @@ const canForge = (blackSmith: BlackSmith, element: Element): boolean => {
     extractedSecretPower,
     weapon: { reservedSecretPower, secretPowers, element: weaponElement },
   } = blackSmith
+  if (weaponElement[element] === 15) return false
   const hasAncientMoon = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '太古の月')
   if (hasAncientMoon) true
 
