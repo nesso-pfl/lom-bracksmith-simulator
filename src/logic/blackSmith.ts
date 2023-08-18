@@ -11,7 +11,6 @@ type BlackSmith = {
 
 // ref: https://blackstraycat.nobody.jp/lom/system.html
 export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
-  console.log(sideMaterial)
   // SP暁の娘の効果
   // ・副原料のエネルギーで強化出来る最大Lv
   // ・補助SPを含めた場合の最大Lv
