@@ -28,23 +28,25 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
   }
   // SP 押し出し(暁チェック)
   const state = reserveSP(state0)
+  // 隕石処理
+  const state1 = applyCommet(state)
   // 光闇判定
-  const state1 = ['light', 'dark'].reduce(
-    (cur, acc) => (state.sideMaterial.element === acc ? forge(cur, acc) : cur),
-    state,
+  const state2 = ['light', 'dark'].reduce(
+    (cur, acc) => (state1.sideMaterial.element === acc ? forge(cur, acc) : cur),
+    state1,
   )
   // SP チェック
-  const state2 = [2, 1, 0].reduce((cur, acc) => applySP(cur, acc), state1)
+  const state3 = [2, 1, 0].reduce((cur, acc) => applySP(cur, acc), state2)
   // 光闇以外判定
-  const state3 = [...state2.weapon.secretPowers.map(spToElement), state2.sideMaterial.element]
+  const state4 = [...state3.weapon.secretPowers.map(spToElement), state3.sideMaterial.element]
     .filter(
       (maybeElement): maybeElement is Element =>
         maybeElement !== undefined && maybeElement !== 'dark' && maybeElement !== 'light',
     )
     .sort((a, b) => -elementOrder.indexOf(a) + elementOrder.indexOf(b))
-    .reduce((cur, acc) => forge(cur, acc), state2)
+    .reduce((cur, acc) => forge(cur, acc), state3)
 
-  return state3.weapon
+  return state4.weapon
 }
 
 const reserveSP = (blackSmith: BlackSmith): BlackSmith => {
@@ -66,6 +68,22 @@ const reserveSP = (blackSmith: BlackSmith): BlackSmith => {
       currentEnergy: extractedSecretPower === '暁の娘' ? sideMaterial.energy + 192 : sideMaterial.energy,
       extractedSecretPower,
     }
+  }
+}
+
+const applyCommet = (blackSmith: BlackSmith): BlackSmith => {
+  const { weapon } = blackSmith
+  if (weapon.material.name !== '隕石' || weapon.element.fire === 0) return blackSmith
+  return {
+    ...blackSmith,
+    weapon: {
+      ...weapon,
+      element: {
+        ...weapon.element,
+        fire: weapon.element.fire - 1,
+      },
+    },
+    currentEnergy: blackSmith.currentEnergy + weapon.material.resistance.fire * Math.pow(2, weapon.element.fire),
   }
 }
 
