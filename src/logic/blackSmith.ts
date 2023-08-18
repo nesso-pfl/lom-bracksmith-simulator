@@ -19,8 +19,16 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
   // ・属性の吸収を含めた場合の最大Lv
   // 優先順位は【光闇木金火土風水】の順にエネルギーが消費される。
 
+  const state0 = {
+    weapon,
+    sideMaterial,
+    currentEnergy: sideMaterial.energy,
+    witch: 0,
+    wizard: 0,
+    extractedSecretPower: undefined,
+  }
   // SP 押し出し(暁チェック)
-  const state = injectSP(weapon, sideMaterial)
+  const state = reserveSP(state0)
   // 光闇判定
   const state1 = ["light", "dark"].reduce(
     (cur, acc) => (state.sideMaterial.element === acc ? forge(cur, acc) : cur),
@@ -40,32 +48,24 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
   return state3.weapon
 }
 
-const injectSP = (weapon: Weapon, sideMaterial: SideMaterial): BlackSmith => {
+const reserveSP = (blackSmith: BlackSmith): BlackSmith => {
+  const { sideMaterial, weapon } = blackSmith
   if (sideMaterial.secretPower === undefined) {
-    return {
-      weapon,
-      sideMaterial,
-      currentEnergy: sideMaterial.energy,
-      witch: 0,
-      wizard: 0,
-      extractedSecretPower: undefined,
-    }
+    return blackSmith
   } else {
     const secretPowers = [weapon.reservedSecretPower, ...weapon.secretPowers].filter(
       (secretPower): secretPower is SecretPower => secretPower !== undefined,
     )
     const extractedSecretPower = secretPowers[3]
     return {
+      ...blackSmith,
       weapon: {
         ...weapon,
         secretPowers: secretPowers.slice(0, 3),
         reservedSecretPower: sideMaterial.secretPower,
       },
-      sideMaterial,
       currentEnergy: extractedSecretPower === "暁の娘" ? sideMaterial.energy + 192 : sideMaterial.energy,
       extractedSecretPower,
-      witch: 0,
-      wizard: 0,
     }
   }
 }
