@@ -43,7 +43,7 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
       (maybeElement): maybeElement is Element =>
         maybeElement !== undefined && maybeElement !== 'dark' && maybeElement !== 'light',
     )
-    .sort((a, b) => -elementOrder.indexOf(a) + elementOrder.indexOf(b))
+    .sort((a, b) => elementOrder.indexOf(a) - elementOrder.indexOf(b))
     .reduce((cur, acc) => forge(cur, acc), state3)
 
   return state4.weapon
@@ -83,7 +83,7 @@ const applyCommet = (blackSmith: BlackSmith): BlackSmith => {
         fire: weapon.element.fire - 1,
       },
     },
-    currentEnergy: blackSmith.currentEnergy + weapon.material.resistance.fire * Math.pow(2, weapon.element.fire),
+    currentEnergy: blackSmith.currentEnergy + weapon.material.resistance.fire * Math.pow(2, weapon.element.fire - 1),
   }
 }
 
@@ -171,6 +171,7 @@ const levelDownElement = (blackSmith: BlackSmith, element: Element) => {
 const forge = (blackSmith: BlackSmith, element: Element) => {
   const levelDownedBs = levelDownElement(blackSmith, element)
   const requiredEnergy = calcRequiredEnergy(levelDownedBs, element)
+  console.log({ ce: levelDownedBs.currentEnergy, requiredEnergy, element })
   return canForge(levelDownedBs, element) && levelDownedBs.currentEnergy >= requiredEnergy
     ? {
         ...levelDownedBs,
