@@ -1,4 +1,4 @@
-import { Element, SecretPower, SideMaterial, Weapon, getElementRelation } from '.'
+import { Element, SecretPower, SideMaterial, Weapon, getElementRelation, spToElement } from '.'
 
 type BlackSmith = {
   weapon: Weapon
@@ -121,21 +121,50 @@ const canForge = (blackSmith: BlackSmith, element: Element): boolean => {
   return weakElement === undefined || weaponElement[weakElement] === 0
 }
 
+const levelDownElement = (blackSmith: BlackSmith, element: Element) => {
+  const {
+    extractedSecretPower,
+    weapon: { reservedSecretPower, secretPowers, element: weaponElement },
+  } = blackSmith
+  const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '鏡面世界')
+  const strongElement = getElementRelation(element, { hasMirrorWorld, weaponElement }).strong
+  if (
+    strongElement === undefined ||
+    weaponElement[strongElement] === 0 ||
+    (strongElement === 'light' && weaponElement.dark <= weaponElement.light) ||
+    (strongElement === 'dark' && weaponElement.light <= weaponElement.dark)
+  )
+    return blackSmith
+
+  return {
+    ...blackSmith,
+    currentEnergy: blackSmith.currentEnergy + Math.pow(2, weaponElement[strongElement] - 1),
+    weapon: {
+      ...blackSmith.weapon,
+      element: {
+        ...weaponElement,
+        [strongElement]: strongElement === 'light' || strongElement === 'dark' ? 0 : weaponElement[strongElement] - 1,
+      },
+    },
+  }
+}
+
 const forge = (blackSmith: BlackSmith, element: Element) => {
-  const requiredEnergy = calcRequiredEnergy(blackSmith, element)
-  return canForge(blackSmith, element) && blackSmith.currentEnergy >= requiredEnergy
+  const levelDownedBs = levelDownElement(blackSmith, element)
+  const requiredEnergy = calcRequiredEnergy(levelDownedBs, element)
+  return canForge(levelDownedBs, element) && levelDownedBs.currentEnergy >= requiredEnergy
     ? {
-        ...blackSmith,
+        ...levelDownedBs,
         weapon: {
-          ...blackSmith.weapon,
+          ...levelDownedBs.weapon,
           element: {
-            ...blackSmith.weapon.element,
-            [element]: blackSmith.weapon.element[element] + 1,
+            ...levelDownedBs.weapon.element,
+            [element]: levelDownedBs.weapon.element[element] + 1,
           },
         },
-        currentEnergy: blackSmith.currentEnergy - requiredEnergy,
+        currentEnergy: levelDownedBs.currentEnergy - requiredEnergy,
       }
-    : blackSmith
+    : levelDownedBs
 }
 
 const applySP = (blackSmith: BlackSmith, index: number) => {
@@ -162,29 +191,6 @@ const applySP = (blackSmith: BlackSmith, index: number) => {
         : blackSmith
     default:
       return blackSmith
-  }
-}
-
-const spToElement = (secretPower: SecretPower): Element | undefined => {
-  switch (secretPower) {
-    case 'ウィスプ':
-      return 'light'
-    case 'ジェイド':
-      return 'dark'
-    case 'ドリアード':
-      return 'wood'
-    case 'アウラ':
-      return 'metal'
-    case 'サラマンダー':
-      return 'fire'
-    case 'ノーム':
-      return 'earth'
-    case 'ジン':
-      return 'wind'
-    case 'ウンディーネ':
-      return 'water'
-    default:
-      return undefined
   }
 }
 

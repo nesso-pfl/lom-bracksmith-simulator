@@ -1,3 +1,5 @@
+import { Element } from '.'
+
 export type SecretPower =
   | 'ウィスプ'
   | 'ジェイド'
@@ -79,3 +81,26 @@ type Category =
   | '神獣'
   | '精霊'
   | 'その他'
+
+export const spToElement = (secretPower: SecretPower): Element | undefined => {
+  switch (secretPower) {
+    case 'ウィスプ':
+      return 'light'
+    case 'ジェイド':
+      return 'dark'
+    case 'ドリアード':
+      return 'wood'
+    case 'アウラ':
+      return 'metal'
+    case 'サラマンダー':
+      return 'fire'
+    case 'ノーム':
+      return 'earth'
+    case 'ジン':
+      return 'wind'
+    case 'ウンディーネ':
+      return 'water'
+    default:
+      return undefined
+  }
+}
