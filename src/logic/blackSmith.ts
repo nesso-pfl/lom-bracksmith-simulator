@@ -1,4 +1,4 @@
-import { Element, SecretPower, SideMaterial, Weapon } from "."
+import { Element, SecretPower, SideMaterial, Weapon, getElementRelation } from "."
 
 type BlackSmith = {
   weapon: Weapon
@@ -113,32 +113,12 @@ const canForge = (blackSmith: BlackSmith, element: Element): boolean => {
     extractedSecretPower,
     weapon: { reservedSecretPower, secretPowers, element: weaponElement },
   } = blackSmith
-  const hasAncientMoon = [reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === "太古の月")
+  const hasAncientMoon = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === "太古の月")
   if (hasAncientMoon) true
 
-  const hasMirrorWorld = [reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === "鏡面世界")
-  switch (element) {
-    case "light":
-      return !(hasMirrorWorld && weaponElement.dark > 0)
-    case "dark":
-      return !!hasMirrorWorld || weaponElement.light === 0
-    case "wood":
-      return hasMirrorWorld
-        ? weaponElement.dark >= weaponElement.light || weaponElement.metal === 0
-        : weaponElement.light >= weaponElement.dark || weaponElement.metal === 0
-    case "metal":
-      return hasMirrorWorld
-        ? weaponElement.light >= weaponElement.dark || weaponElement.wood === 0
-        : weaponElement.dark >= weaponElement.light || weaponElement.wood === 0
-    case "fire":
-      return hasMirrorWorld ? weaponElement.earth === 0 : weaponElement.water === 0
-    case "earth":
-      return hasMirrorWorld ? weaponElement.wind === 0 : weaponElement.fire === 0
-    case "wind":
-      return hasMirrorWorld ? weaponElement.water === 0 : weaponElement.earth === 0
-    case "water":
-      return hasMirrorWorld ? weaponElement.fire === 0 : weaponElement.wind === 0
-  }
+  const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === "鏡面世界")
+  const weakElement = getElementRelation(element, { hasMirrorWorld, weaponElement }).weak
+  return weakElement === undefined || weaponElement[weakElement] === 0
 }
 
 const forge = (blackSmith: BlackSmith, element: Element) => {
