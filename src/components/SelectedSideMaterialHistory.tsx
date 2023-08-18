@@ -1,6 +1,6 @@
-import { Box, Heading, VStack } from "@chakra-ui/react"
-import React from "react"
-import { SideMaterial } from "../logic"
+import { Box, Heading, VStack } from '@chakra-ui/react'
+import React from 'react'
+import { SideMaterial } from '../logic'
 
 type Props = {
   sideMaterials: SideMaterial[]

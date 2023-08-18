@@ -1,4 +1,4 @@
-import { Element, SecretPower, SideMaterial, Weapon, getElementRelation } from "."
+import { Element, SecretPower, SideMaterial, Weapon, getElementRelation } from '.'
 
 type BlackSmith = {
   weapon: Weapon
@@ -30,7 +30,7 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
   // SP 押し出し(暁チェック)
   const state = reserveSP(state0)
   // 光闇判定
-  const state1 = ["light", "dark"].reduce(
+  const state1 = ['light', 'dark'].reduce(
     (cur, acc) => (state.sideMaterial.element === acc ? forge(cur, acc) : cur),
     state,
   )
@@ -40,7 +40,7 @@ export const blackSmith = (weapon: Weapon, sideMaterial: SideMaterial) => {
   const state3 = [...state2.weapon.secretPowers.map(spToElement), state2.sideMaterial.element]
     .filter(
       (maybeElement): maybeElement is Element =>
-        maybeElement !== undefined && maybeElement !== "dark" && maybeElement !== "light",
+        maybeElement !== undefined && maybeElement !== 'dark' && maybeElement !== 'light',
     )
     .sort((a, b) => -elementOrder.indexOf(a) + elementOrder.indexOf(b))
     .reduce((cur, acc) => forge(cur, acc), state2)
@@ -64,7 +64,7 @@ const reserveSP = (blackSmith: BlackSmith): BlackSmith => {
         secretPowers: secretPowers.slice(0, 3),
         reservedSecretPower: sideMaterial.secretPower,
       },
-      currentEnergy: extractedSecretPower === "暁の娘" ? sideMaterial.energy + 192 : sideMaterial.energy,
+      currentEnergy: extractedSecretPower === '暁の娘' ? sideMaterial.energy + 192 : sideMaterial.energy,
       extractedSecretPower,
     }
   }
@@ -75,16 +75,16 @@ const calcRequiredEnergy = (blackSmith: BlackSmith, element: Element) => {
   const resistance = blackSmith.weapon.material.resistance[element]
   const support = (() => {
     switch (element) {
-      case "light":
-      case "wood":
-      case "fire":
-      case "earth":
-        return "wizard"
-      case "dark":
-      case "metal":
-      case "water":
-      case "wind":
-        return "witch"
+      case 'light':
+      case 'wood':
+      case 'fire':
+      case 'earth':
+        return 'wizard'
+      case 'dark':
+      case 'metal':
+      case 'water':
+      case 'wind':
+        return 'witch'
     }
   })()
   return resistance === 32 && blackSmith[support] === 3
@@ -113,10 +113,10 @@ const canForge = (blackSmith: BlackSmith, element: Element): boolean => {
     extractedSecretPower,
     weapon: { reservedSecretPower, secretPowers, element: weaponElement },
   } = blackSmith
-  const hasAncientMoon = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === "太古の月")
+  const hasAncientMoon = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '太古の月')
   if (hasAncientMoon) true
 
-  const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === "鏡面世界")
+  const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '鏡面世界')
   const weakElement = getElementRelation(element, { hasMirrorWorld, weaponElement }).weak
   return weakElement === undefined || weaponElement[weakElement] === 0
 }
@@ -141,15 +141,15 @@ const forge = (blackSmith: BlackSmith, element: Element) => {
 const applySP = (blackSmith: BlackSmith, index: number) => {
   const secretPower = blackSmith.weapon.secretPowers[index]
   switch (secretPower) {
-    case "ウィスプ":
-      return forge(blackSmith, "light")
-    case "ジェイド":
-      return forge(blackSmith, "dark")
-    case "魔法使い":
+    case 'ウィスプ':
+      return forge(blackSmith, 'light')
+    case 'ジェイド':
+      return forge(blackSmith, 'dark')
+    case '魔法使い':
       return { ...blackSmith, wizard: blackSmith.wizard + 1 }
-    case "魔女":
+    case '魔女':
       return { ...blackSmith, witch: blackSmith.witch + 1 }
-    case "暁の娘":
+    case '暁の娘':
       return blackSmith.currentEnergy <= 24
         ? {
             ...blackSmith,
@@ -167,25 +167,25 @@ const applySP = (blackSmith: BlackSmith, index: number) => {
 
 const spToElement = (secretPower: SecretPower): Element | undefined => {
   switch (secretPower) {
-    case "ウィスプ":
-      return "light"
-    case "ジェイド":
-      return "dark"
-    case "ドリアード":
-      return "wood"
-    case "アウラ":
-      return "metal"
-    case "サラマンダー":
-      return "fire"
-    case "ノーム":
-      return "earth"
-    case "ジン":
-      return "wind"
-    case "ウンディーネ":
-      return "water"
+    case 'ウィスプ':
+      return 'light'
+    case 'ジェイド':
+      return 'dark'
+    case 'ドリアード':
+      return 'wood'
+    case 'アウラ':
+      return 'metal'
+    case 'サラマンダー':
+      return 'fire'
+    case 'ノーム':
+      return 'earth'
+    case 'ジン':
+      return 'wind'
+    case 'ウンディーネ':
+      return 'water'
     default:
       return undefined
   }
 }
 
-const elementOrder = ["light", "dark", "wood", "metal", "fire", "earth", "wind", "water"] as const
+const elementOrder = ['light', 'dark', 'wood', 'metal', 'fire', 'earth', 'wind', 'water'] as const

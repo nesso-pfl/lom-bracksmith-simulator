@@ -1,13 +1,13 @@
-import { Box, ChakraProvider, Flex, Heading } from "@chakra-ui/react"
+import { Box, ChakraProvider, Flex, Heading } from '@chakra-ui/react'
 import {
   BaseMaterialAndWeaponTypeForm,
   SelectedSideMaterialHistory,
   SideMaterialButtons,
   WeaponStatus,
-} from "./components"
-import { baseMaterialData, weaponData } from "./data"
-import { useState } from "react"
-import { SideMaterial, Weapon, blackSmith } from "./logic"
+} from './components'
+import { baseMaterialData, weaponData } from './data'
+import { useState } from 'react'
+import { SideMaterial, Weapon, blackSmith } from './logic'
 
 function App() {
   const [weapon, setWeapon] = useState<Weapon>({
@@ -41,7 +41,7 @@ function App() {
 
   return (
     <ChakraProvider>
-      <Box p={4} bg="orange.100" minH={"100vh"}>
+      <Box p={4} bg="orange.100" minH={'100vh'}>
         <Heading as="h1" fontSize="xl" mb={5}>
           聖剣伝説 Legend of Mana 武器鍛冶シミュレータ
         </Heading>

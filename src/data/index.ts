@@ -1,3 +1,3 @@
-export * from "./baseMaterial"
-export * from "./sideMaterial"
-export * from "./weapon"
+export * from './baseMaterial'
+export * from './sideMaterial'
+export * from './weapon'

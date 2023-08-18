@@ -1,7 +1,7 @@
-import { Box, Flex, Heading } from "@chakra-ui/react"
-import { sideMaterialData } from "../data"
-import React from "react"
-import { SideMaterial } from "../logic"
+import { Box, Flex, Heading } from '@chakra-ui/react'
+import { sideMaterialData } from '../data'
+import React from 'react'
+import { SideMaterial } from '../logic'
 
 type Props = {
   onClick: (material: SideMaterial) => unknown

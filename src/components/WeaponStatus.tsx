@@ -1,6 +1,6 @@
-import { Box, HStack, VStack } from "@chakra-ui/react"
-import React from "react"
-import { Weapon, calcOffense, elements, showElement, showStatus, statuses } from "../logic"
+import { Box, HStack, VStack } from '@chakra-ui/react'
+import React from 'react'
+import { Weapon, calcOffense, elements, showElement, showStatus, statuses } from '../logic'
 
 type Props = {
   weapon: Weapon
@@ -11,7 +11,7 @@ export const WeaponStatus: React.FC<Props> = ({ weapon }) => {
       <Box mb={3}>
         {weapon.material.name}の{weapon.type.name} {calcOffense(weapon)}
       </Box>
-      <HStack wrap={"wrap"}>
+      <HStack wrap={'wrap'}>
         <Box>
           <HStack>
             {statuses.map((status) => (
