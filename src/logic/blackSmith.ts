@@ -141,7 +141,7 @@ const canForge = (blackSmith: BlackSmith, element: Element): boolean => {
 const levelDownElement = (blackSmith: BlackSmith, element: Element) => {
   const {
     extractedSecretPower,
-    weapon: { reservedSecretPower, secretPowers, element: weaponElement },
+    weapon: { reservedSecretPower, secretPowers, element: weaponElement, material },
   } = blackSmith
   const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '鏡面世界')
   const strongElement = getElementRelation(element, { hasMirrorWorld, weaponElement }).strong
@@ -155,7 +155,8 @@ const levelDownElement = (blackSmith: BlackSmith, element: Element) => {
 
   return {
     ...blackSmith,
-    currentEnergy: blackSmith.currentEnergy + Math.pow(2, weaponElement[strongElement] - 1),
+    currentEnergy:
+      blackSmith.currentEnergy + material.resistance[strongElement] * Math.pow(2, weaponElement[strongElement] - 1),
     weapon: {
       ...blackSmith.weapon,
       element: {
