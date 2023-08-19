@@ -30,6 +30,7 @@ export type Weapon = {
 }
 
 export const calcOffense = (weapon: Weapon) => {
+  console.log(weapon)
   return Math.floor(
     (((weapon.type.spec.sharpness * weapon.material.spec.sharpness +
       weapon.type.spec.weight * weapon.material.spec.weight +

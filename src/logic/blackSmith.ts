@@ -132,7 +132,7 @@ const canForge = (blackSmith: BlackSmith, element: Element): boolean => {
   } = blackSmith
   if (weaponElement[element] === 15) return false
   const hasAncientMoon = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '太古の月')
-  if (hasAncientMoon) true
+  if (hasAncientMoon) return true
 
   const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '鏡面世界')
   const weakElement = getElementRelation(element, { hasMirrorWorld, weaponElement }).weak
@@ -144,9 +144,11 @@ const levelDownElement = (blackSmith: BlackSmith, element: Element) => {
     extractedSecretPower,
     weapon: { reservedSecretPower, secretPowers, element: weaponElement, material },
   } = blackSmith
+  const hasAncientMoon = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '太古の月')
   const hasMirrorWorld = !![reservedSecretPower, ...secretPowers, extractedSecretPower].find((sp) => sp === '鏡面世界')
   const strongElement = getElementRelation(element, { hasMirrorWorld, weaponElement }).strong
   if (
+    hasAncientMoon ||
     strongElement === undefined ||
     weaponElement[strongElement] === 0 ||
     (strongElement === 'light' && weaponElement.dark <= weaponElement.light) ||
@@ -171,7 +173,7 @@ const levelDownElement = (blackSmith: BlackSmith, element: Element) => {
 const forge = (blackSmith: BlackSmith, element: Element) => {
   const levelDownedBs = levelDownElement(blackSmith, element)
   const requiredEnergy = calcRequiredEnergy(levelDownedBs, element)
-  console.log({ ce: levelDownedBs.currentEnergy, requiredEnergy, element })
+  console.log({ ce: levelDownedBs.currentEnergy, re: requiredEnergy, element })
   return canForge(levelDownedBs, element) && levelDownedBs.currentEnergy >= requiredEnergy
     ? {
         ...levelDownedBs,
